@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Cadastro</title>
+  <link rel="shortcut icon" href="/public/assets/images/favicon_icon.ico">
+  <link rel="stylesheet" href="/public/css/base.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="/public/assets/images/logo.png" alt="Logo Steam Fake" />
+    </div>
+    <h2>Cadastro</h2>
+    <form action="/src/cadastro3/index.html">
+      <form id="form-endereco">
+        <div class="form-group">
+          <input type="text" id="cep" name="cep" maxlength="9" placeholder="Digite seu CEP" required>
+          <input type="text" id="rua" name="rua" placeholder="Rua" readonly>
+          <input type="text" id="cidade" name="cidade" placeholder="Cidade" readonly>
+          <input type="text" id="estado" name="estado" placeholder="Estado" readonly>
+          <input type="text" id="pais" name="pais" value="Brasil" readonly>
+        </div>
+        <button type="submit">Próximo</button>
+      </form>
+    </form>
+    <a href="/src/cadastro1/index.html">Voltar</a>
+  </div>
+
+  <footer class="footer-site">
+    <p>© 2025 Steam. Todos os direitos reservados.</p>
+  </footer>
+</body>
+
+<script>
+  // CEP é buscar automatica: rua, cidade, estado
+  document.getElementById('cep').addEventListener('blur', function () {
+    let cep = this.value.replace(/\D/g, '');
+
+    if (cep.length !== 8) {
+      alert('CEP inválido. Digite 8 números.');
+      return;
+    }
+
+    const url = `https://viacep.com.br/ws/${cep}/json/`;
+
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        if (data.erro) {
+          alert('CEP não encontrado.');
+          return;
+        }
+
+        document.getElementById('rua').value = data.logradouro || '';
+        document.getElementById('cidade').value = data.localidade || '';
+        document.getElementById('estado').value = data.uf || '';
+        document.getElementById('pais').value = 'Brasil';
+      })
+      .catch(() => {
+        alert('Erro ao buscar o CEP.');
+      });
+  });
+
+  const cepInput = document.getElementById('cep');
+
+  cepInput.addEventListener('input', () => {
+    if (cepInput.value.trim() === '') {
+      document.getElementById('rua').value = '';
+      document.getElementById('cidade').value = '';
+      document.getElementById('estado').value = '';
+      document.getElementById('pais').value = '';
+    }
+  });
+
+</script>
+
+</html>

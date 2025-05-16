@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Cadastro</title>
+    <link rel="shortcut icon" href="/public/assets/images/favicon_icon.ico">
+    <link rel="stylesheet" href="/public/css/base.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="/public/assets/images/logo.png" alt="Logo Steam Fake" />
+        </div>
+        <h2>Cadastro</h2>
+        <form action="/src/cadastro2/index.html">
+            <input type="text" name="nome" placeholder="Nome completo" required />
+            <input type="text" name="apelido" placeholder="Apelido" required />
+            <input type="tel" name="telefone" placeholder="Telefone" required />
+            <input type="date" name="data" placeholder="Data de Nascimento" required />
+            <input type="email" name="email" placeholder="E-mail" required />
+            <div class="campo-senha">
+                <input type="password" id="senha" name="senha" placeholder="Senha" required />
+                <span class="toggle-senha" onclick="toggleSenha(this, 'senha')">
+                    <i class="fa-solid fa-eye"></i>
+                </span>
+            </div>
+            <div class="campo-senha">
+                <input type="password" id="confirmar-senha" name="confirmar-senha" placeholder="Confirmar senha"
+                    required />
+                <span class="toggle-senha" onclick="toggleSenha(this, 'confirmar-senha')">
+                    <i class="fa-solid fa-eye"></i>
+                </span>
+            </div>
+            <button type="submit">Próximo</button>
+        </form>
+        <a href="/src/login/index.html">Já tem uma conta? Login</a>
+    </div>
+
+    <footer class="footer-site">
+        <p>© 2025 Steam. Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+<script>
+    // Olho aberto ou fechado (Senha)
+    function toggleSenha(elemento, idCampo) {
+        const input = document.getElementById(idCampo);
+        const icon = elemento.querySelector("i");
+
+        if (input.type === "password") {
+            input.type = "text";
+            icon.classList.remove("fa-eye");
+            icon.classList.add("fa-eye-slash");
+        } else {
+            input.type = "password";
+            icon.classList.remove("fa-eye-slash");
+            icon.classList.add("fa-eye");
+        }
+    }
+</script>
+
+</html>

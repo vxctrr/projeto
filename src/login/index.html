@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>IGLU GAMES - Iniciar sessão</title>
+    <link rel="shortcut icon" href="/public/assets/images/favicon_icon.ico">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="/public/assets/images/logo.png" alt="Logo Steam Fake">
+        </div>
+        <h1 class="logo-title">IGLU GAMES</h1>
+        <h2>Iniciar sessão</h2>
+        <form>
+            <input type="text" placeholder="Nome de usuário" required>
+            <div class="password-container">
+                <input type="password" id="senha" placeholder="Senha" required>
+                <span id="toggleSenha" class="toggle-password">
+                    <i class="fas fa-eye"></i>
+                </span>
+            </div>
+            <button type="submit">Entrar</button>
+            <a href="/src/esqueceuSenha/index.html">Esqueceu sua senha?</a>
+        </form>
+        <div class="register">
+            <p>Não tem uma conta? <a href="/src/cadastro1/index.html">Cadastre-se</a></p>
+        </div>
+    </div>
+
+    <footer class="footer-site">
+        <p>© 2025 Steam. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+
+<script>
+    // Olho aberto ou fechado (Senha)
+    const senhaInput = document.getElementById("senha");
+    const toggleBtn = document.getElementById("toggleSenha");
+    const icon = toggleBtn.querySelector("i");
+
+    toggleBtn.addEventListener("click", () => {
+        const isSenha = senhaInput.type === "password";
+        senhaInput.type = isSenha ? "text" : "password";
+        icon.classList.toggle("fa-eye");
+        icon.classList.toggle("fa-eye-slash");
+    });
+</script>
+
+
+</html>

@@ -1,0 +1,6 @@
+@import url('/public/css/base.css');
+
+/* Estilos específicos do cadastro */
+h2 {
+    margin-bottom: 15px;
+}

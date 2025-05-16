@@ -1,0 +1,222 @@
+body {
+    background: linear-gradient(to bottom, #0b1a2e, #0f2a44);
+    font-family: 'Segoe UI', sans-serif;
+    color: #e6eef5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+    padding-bottom: 44px;
+    margin: 0;
+}
+
+.container {
+    background-color: #1c3a5b;
+    border: 1px solid #66c0f4;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(102, 192, 244, 0.1);
+    padding: 30px 25px;
+    width: 100%;
+    max-width: 380px;
+    box-sizing: border-box;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.container:hover {
+    box-shadow: 0 0 30px rgba(102, 192, 244, 0.25);
+}
+
+.logo img {
+    width: 100px;
+    margin-bottom: 0px;
+}
+
+h2 {
+    margin-top: 45px;
+    margin-bottom: 15px;
+    font-size: 25px;
+    color: #66c0f4;
+}
+
+
+form input {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    background-color: #0b1a2e;
+    border: 1px solid #4aa3df;
+    border-radius: 6px;
+    color: #e6eef5;
+    font-size: 16px;
+}
+
+form input::placeholder {
+    color: #9dbbd3;
+}
+
+form button {
+    background-color: #1c689b;
+    /* azul escuro */
+    color: #000000;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 15px;
+}
+
+
+form button:hover {
+    background-color: #66c0f4;
+    /* azul claro */
+    transform: scale(1.03);
+    /* efeito de leve aumento */
+}
+
+form a {
+    display: block;
+    text-align: center;
+    margin-top: 12px;
+    color: #66c0f4;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+form a:hover {
+    text-decoration: underline;
+}
+
+.campo-senha {
+    position: relative;
+}
+
+.campo-senha input {
+    width: 82%;
+    padding-right: 40px;
+}
+
+.toggle-senha {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #90a7c0;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.3s ease;
+}
+
+.toggle-senha:hover {
+    color: #66c0f4;
+}
+
+a {
+    color: #66c0f4;
+    text-decoration: none;
+    font-size: 14px;
+    display: inline-block;
+    margin-top: 15px;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #3b9acb;
+}
+
+.register {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.register a {
+    color: #66c0f4;
+    text-decoration: none;
+}
+
+.register a:hover {
+    text-decoration: underline;
+}
+
+.footer-site {
+    background-color: #0b1a2e;
+    color: #9dbbd3;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 13px;
+    border-top: 1px solid #66c0f4;
+}
+
+@media (max-width: 480px) {
+    form {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    form input,
+    form button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .password-container {
+        /* se precisar ajustar o ícone de olho */
+        right: 8px;
+    }
+
+    /* Ajusta o footer para não sumir no celular */
+    footer {
+        font-size: 12px;
+        padding: 15px 10px;
+    }
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+.password-container input {
+    width: 82%;
+    padding-right: 40px;
+    /* espaço para o ícone */
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #66c0f4;
+}
+
+.toggle-password i {
+    pointer-events: none;
+}
+
+.footer-site {
+    background-color: #1b2838;
+    color: #c7d5e0;
+    text-align: center;
+    padding: 5px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Esconde o footer em telas menores */
+@media (max-width: 600px) {
+    .footer-site {
+        display: none;
+    }
+}

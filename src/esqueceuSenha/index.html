@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Recuperar Senha</title>
+    <link rel="shortcut icon" href="/public/assets/images/favicon_icon.ico">
+    <link rel="stylesheet" href="index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="/public/assets/images/logo.png" alt="Logo Steam Fake">
+        </div>
+        <h2>Recuperar Senha</h2>
+        <p>Digite seu e-mail para receber o link de recuperação.</p>
+        <form id="form-recuperacao">
+            <input type="email" id="email" placeholder="E-mail" required>
+            <button type="submit">Enviar link</button>
+            <a href="/src/login/index.html">Voltar para o login</a>
+        </form>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal()">&times;</span>
+            <p>Um link de recuperação foi enviado para seu e-mail.</p>
+        </div>
+    </div>
+
+    <footer class="footer-site">
+        <p>© 2025 Steam. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+
+<script>
+    // Modal
+    const form = document.getElementById("form-recuperacao");
+    const emailInput = document.getElementById("email");
+    const modal = document.getElementById("modal");
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const email = emailInput.value.trim();
+
+        if (email === "") {
+            alert("Por favor, preencha o campo de e-mail.");
+            return;
+        }
+
+        modal.classList.add("ativo");
+    });
+
+    function fecharModal() {
+        modal.classList.remove("ativo");
+        emailInput.value = ""; // Limpa o campo
+    }
+
+    // Fechar modal clicando fora do conteúdo
+    modal.addEventListener("click", function (e) {
+        if (e.target === modal) {
+            fecharModal();
+        }
+    });
+
+</script>
+
+</html>
