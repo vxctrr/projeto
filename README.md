@@ -5,7 +5,7 @@ Dando continuidade à primeira entrega do PI, nessa segunda parte do projeto de 
 FrontEnd, BackEnd e Banco de Dados.
 
 # Integrantes:
-JONATHAN ALEXANDRE VEIGA DA SILVA
+JONATHAN ALEXANDRE VEIGA DA SILVA  
 MATHEUS AUGUSTO CERIBELLI MECA
 JHONATAS BENIGNO DOS SANTOS
 TEO CARVALHO
