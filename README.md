@@ -4,7 +4,7 @@ Dando continuidade à primeira entrega do PI, nessa segunda parte do projeto de 
 ## Iremos desenvolver:
 FrontEnd, BackEnd e Banco de Dados.
 
-#Integrantes:
+# Integrantes:
 JONATHAN ALEXANDRE VEIGA DA SILVA
 MATHEUS AUGUSTO CERIBELLI MECA
 JHONATAS BENIGNO DOS SANTOS
